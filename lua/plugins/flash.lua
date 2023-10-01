@@ -4,11 +4,16 @@ return {
   ---@type Flash.Config
   opts = {
     modes = {
-      char = {
-        enabled = false,
-        multi_line = false,
-        autohide = false
-      }
+        search = {
+            -- when `true`, flash will be activated during regular search by default.
+            -- You can always toggle when searching with `require("flash").toggle()`
+            enabled = false,
+        },
+        char = {
+            enabled = false,
+            multi_line = false,
+            autohide = false
+        }
     }
   },
   -- stylua: ignore

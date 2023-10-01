@@ -1,5 +1,5 @@
 return {
-    "joshdick/onedark.vim"
+    "joshdick/onedark.vim",
 }
 
 

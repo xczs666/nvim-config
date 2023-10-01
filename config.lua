@@ -1,3 +1,7 @@
+vim.o.background = "dark"
+vim.o.termguicolors = true
+vim.opt.termguicolors = true
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 -- vim.fn.input("lazypath: " .. lazypath)
 if not vim.loop.fs_stat(lazypath) then
@@ -15,4 +19,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
 
--- require('flit').setup()
+vim.o.mouse = "a"
+-- 高亮所在行
+vim.wo.cursorline = true

@@ -20,12 +20,14 @@ return {
                 name = "+file",                                                             -- optional group name
                 f = { "<cmd>Telescope find_files<cr>", "Find File" },                       -- create a binding with label
                 r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File", noremap = false }, -- additional options for creating the keymap
+                i = { "<cmd>Telescope git_files<cr>", "Git File", noremap = false },        -- additional options for creating the keymap
                 e = { "Format File" },                                                      -- same as above
-                g = { "Grep File" },
-                b = { "Buffers" },
-                j = { "Jump List" },
+                g = { "<cmd>Telescope live_string<cr>", "Grep File" },
+                l = { "<cmd>Telescope command_history<cr>", "Command History" },
+                b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+                j = { "<cmd>Telescope jumplist<cr>", "Jump List" },
                 w = { "Browser File" },
-                h = { "Help File" },
+                h = { "<cmd>Telescope help_tags<cr>", "Help File" },
                 -- ["1"] = "which_key_ignore", -- special label to hide it in the popup
                 -- b = { function() print("bar") end, "Foobar" }                               -- you can also pass functions!
             },
