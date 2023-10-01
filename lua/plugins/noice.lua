@@ -1,6 +1,6 @@
 return {
   "folke/noice.nvim",
-  event = "VeryLazy",
+  -- event = "VeryLazy",
   init = function()
       vim.opt.termguicolors = true
   end,

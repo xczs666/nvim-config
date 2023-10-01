@@ -1,7 +1,7 @@
 return {
     'folke/neodev.nvim',
     { "folke/neoconf.nvim", cmd = "Neoconf" },
-    {'neoclide/coc.nvim', branch = 'release'},
+    -- {'neoclide/coc.nvim', branch = 'release'},
     -- 'tpope/vim-fugitive'
     -- 插入模式下快捷键
     'tpope/vim-rsi',
