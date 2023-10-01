@@ -5,7 +5,7 @@ return {
         require("mason").setup()
         require("mason-lspconfig").setup{
             ensure_installed = { "lua_ls", "rust_analyzer","bashls", "jdtls", "clangd", 
-            "cmake", "pyright", "sqls", "awk_ls", "java_language_server" },
+            "cmake", "pyright", "sqlls", "awk_ls", "java_language_server", "marksman" },
         }
         local lspconfig = require('lspconfig')
 

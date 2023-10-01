@@ -1,4 +1,5 @@
 return {
+    "joshdick/onedark.vim",
     'folke/neodev.nvim',
     { "folke/neoconf.nvim", cmd = "Neoconf" },
     -- {'neoclide/coc.nvim', branch = 'release'},
@@ -6,7 +7,9 @@ return {
     -- 插入模式下快捷键
     'tpope/vim-rsi',
     'nvim-treesitter/nvim-treesitter',
-    'scrooloose/nerdtree',
+    -- 'scrooloose/nerdtree',
+    -- 'jistr/vim-nerdtree-tabs',
+    -- 'Xuyuanp/nerdtree-git-plugin',
     'altercation/vim-colors-solarized',
     'spf13/vim-colors',
     -- gr 匹配替换
@@ -19,7 +22,7 @@ return {
     'vim-scripts/DrawIt',
     -- f F t T 快捷移动提示
     'unblevable/quick-scope',
-    'jiangmiao/auto-pairs',
+    -- 'jiangmiao/auto-pairs',
     'ctrlpvim/ctrlp.vim',
     'tacahiroy/ctrlp-funky',
     -- <C-n> Ctrl-Down/Up Shift-Arrows n/N [/] q Q
@@ -29,7 +32,6 @@ return {
     {'Lokaltog/powerline', rtp='/powerline/bindings/vim'},
     'powerline/fonts',
     'bling/vim-bufferline',
-    'jistr/vim-nerdtree-tabs',
     -- 'flazz/vim-colorschemes',
     'nathanaelkane/vim-indent-guides',
     'mbbill/undotree',
@@ -54,7 +56,6 @@ return {
     'michaeljsmith/vim-indent-object',
     'sindrets/diffview.nvim',
     'christoomey/vim-tmux-navigator',
-    'Xuyuanp/nerdtree-git-plugin',
     -- gitsigns 替代
     -- 'airblade/vim-gitgutter',
     'mhinz/vim-signify',
