@@ -3,29 +3,34 @@ return {
     tag = '0.1.3',
     dependencies = { 'nvim-lua/plenary.nvim',
         "nvim-telescope/telescope-file-browser.nvim",
-        "LinArcX/telescope-command-palette.nvim",
         {
             'nvim-telescope/telescope-fzf-native.nvim',
-            build =
-            'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
-        } },
+            build = 'make',
+            -- 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+        },
+        {
+            "nvim-telescope/telescope-frecency.nvim",
+            dependencies = { "kkharji/sqlite.lua" },
+        },
+        "LinArcX/telescope-command-palette.nvim",
+    },
     config = function()
-        vim.keymap.set('n', '<leader>fw', require 'telescope'.extensions.file_browser.file_browser, {})
         require('telescope').setup({
-            file_browser = {
-                -- theme = "ivy",
-                -- disables netrw and use telescope-file-browser in its place
-                hijack_netrw = true,
-                mappings = {
-                    ["i"] = {
-                        -- your custom insert mode mappings
-                    },
-                    ["n"] = {
-                        -- your custom normal mode mappings
-                    },
-                },
-            },
             extensions = {
+                fzf = {
+                    fuzzy = true,                   -- false will only do exact matching
+                    override_generic_sorter = true, -- override the generic sorter
+                    override_file_sorter = true,    -- override the file sorter
+                    case_mode = "smart_case",       -- or "ignore_case" or "respect_case" the default case_mode is "smart_case"
+                },
+                frecency = {
+                    use_sqlite = false,
+                },
+                file_browser = {
+                    -- theme = "ivy",
+                    -- disables netrw and use telescope-file-browser in its place
+                    hijack_netrw = true,
+                },
                 command_palette = {
                     { "File",
                         { "entire selection (C-a)",  ':call feedkeys("GVgg")' },
@@ -64,10 +69,12 @@ return {
                         { "relative number",           ':set relativenumber!' },
                         { "search highlighting (F12)", ':set hlsearch!' },
                     }
-                }
+                },
             }
         })
-        require("telescope").load_extension "file_browser"
+        require('telescope').load_extension('fzf')
+        require("telescope").load_extension("file_browser")
+        require("telescope").load_extension("frecency")
         require('telescope').load_extension('command_palette')
     end
 }

@@ -2,7 +2,8 @@ vim.loader.enable()
 vim.o.shell = "zsh"
 vim.o.background = "dark"
 vim.o.termguicolors = true
-vim.opt.termguicolors = true
+vim.o.timeout = true
+vim.o.timeoutlen = 300
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 -- vim.fn.input("lazypath: " .. lazypath)
