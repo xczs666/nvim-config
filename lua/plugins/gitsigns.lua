@@ -2,7 +2,7 @@ return {
     -- { 'mhinz/vim-signify' },
     {
         'lewis6991/gitsigns.nvim',
-        -- event = "VeryLazy",
+        event = "VeryLazy",
         config = function()
             require('gitsigns').setup {
                 signs                        = {

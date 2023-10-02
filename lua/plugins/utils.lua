@@ -1,10 +1,10 @@
 return {
     {
         "rhysd/accelerated-jk",
-        config = function()
-            vim.keymap.set("n", "j", "<Plug>(accelerated_jk_gj)")
-            vim.keymap.set("n", "k", "<Plug>(accelerated_jk_gk)")
-        end,
+        keys = {
+            { "j", "<Plug>(accelerated_jk_gj)", mode = { "n" } },
+            { "k", "<Plug>(accelerated_jk_gk)", mode = { "n" } },
+        },
     },
     {
         "ethanholz/nvim-lastplace",
@@ -12,10 +12,12 @@ return {
     },
     {
         "echasnovski/mini.ai",
+        event = "VeryLazy",
         config = true,
     },
     {
         "echasnovski/mini.comment",
+        event = "VeryLazy",
         version = false,
         config = true,
     }

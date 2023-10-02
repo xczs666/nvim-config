@@ -1,11 +1,13 @@
 return {
     {
         "akinsho/bufferline.nvim",
+        event = "VeryLazy",
         config = true,
     },
     {
         -- 'nathanaelkane/vim-indent-guides',
         "lukas-reineke/indent-blankline.nvim",
+        event = "VeryLazy",
         main = "ibl",
         opts = {},
         config = true,
