@@ -1,7 +1,6 @@
 return {
-    "joshdick/onedark.vim",
     'folke/neodev.nvim',
-    { "folke/neoconf.nvim", cmd = "Neoconf" },
+    { "folke/neoconf.nvim",     cmd = "Neoconf" },
     -- {'neoclide/coc.nvim', branch = 'release'},
     -- 'tpope/vim-fugitive'
     -- 插入模式下快捷键
@@ -26,14 +25,13 @@ return {
     'ctrlpvim/ctrlp.vim',
     'tacahiroy/ctrlp-funky',
     -- <C-n> Ctrl-Down/Up Shift-Arrows n/N [/] q Q
-    {'mg979/vim-visual-multi', branch = 'master'},
+    { 'mg979/vim-visual-multi', branch = 'master' },
     -- i a I A   n l   aa ia
     'wellle/targets.vim',
-    {'Lokaltog/powerline', rtp='/powerline/bindings/vim'},
-    'powerline/fonts',
+    { 'Lokaltog/powerline', rtp = '/powerline/bindings/vim' },
+    -- 'powerline/fonts',
     'bling/vim-bufferline',
     -- 'flazz/vim-colorschemes',
-    'nathanaelkane/vim-indent-guides',
     'mbbill/undotree',
     -- crm MixedCase
     -- crc camelCase
@@ -58,7 +56,6 @@ return {
     'christoomey/vim-tmux-navigator',
     -- gitsigns 替代
     -- 'airblade/vim-gitgutter',
-    'mhinz/vim-signify',
     'osyo-manga/vim-over',
     'godlygeek/tabular',
     'luochen1990/rainbow',
@@ -69,6 +66,5 @@ return {
     '907th/vim-auto-save',
     'ybian/smartim',
     -- statusline
-    'vim-airline/vim-airline',
     -- 'vim-airline/vim-airline-themes',
 }

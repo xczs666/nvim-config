@@ -22,7 +22,7 @@ return {
                 r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File", noremap = false }, -- additional options for creating the keymap
                 i = { "<cmd>Telescope git_files<cr>", "Git File", noremap = false },        -- additional options for creating the keymap
                 e = { "Format File" },                                                      -- same as above
-                g = { "<cmd>Telescope live_string<cr>", "Grep File" },
+                g = { "<cmd>Telescope live_grep<cr>", "Grep File" },
                 l = { "<cmd>Telescope command_history<cr>", "Command History" },
                 b = { "<cmd>Telescope buffers<cr>", "Buffers" },
                 j = { "<cmd>Telescope jumplist<cr>", "Jump List" },
@@ -31,6 +31,8 @@ return {
                 -- ["1"] = "which_key_ignore", -- special label to hide it in the popup
                 -- b = { function() print("bar") end, "Foobar" }                               -- you can also pass functions!
             },
+            ["]c"] = "Git next_hunk",
+            ["[c"] = "Git prev_hunk",
         })
     end,
     opts = {
