@@ -20,9 +20,10 @@ return {
         end
     },
     {
-        -- "RRethy/vim-illuminate",
-        -- config = function()
-        --     require('illuminate').configure()
-        -- end
+        "RRethy/vim-illuminate",
+        event = "VeryLazy",
+        config = function()
+            require('illuminate').configure()
+        end
     },
 }

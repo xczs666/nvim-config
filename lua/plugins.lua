@@ -48,7 +48,7 @@ return {
     -- Files GFiles GFiles? Buffers History History: History/ Helptags Filetypes Maps
     'junegunn/fzf.vim',
     -- ii ai aI
-    -- { 'michaeljsmith/vim-indent-object', event = "VeryLazy", },
+    { 'michaeljsmith/vim-indent-object', event = "VeryLazy", },
     -- 'sindrets/diffview.nvim',
     'christoomey/vim-tmux-navigator',
     -- gitsigns 替代
