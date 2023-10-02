@@ -1,6 +1,4 @@
 return {
-    'folke/neodev.nvim',
-    { "folke/neoconf.nvim",     cmd = "Neoconf" },
     -- {'neoclide/coc.nvim', branch = 'release'},
     -- 'tpope/vim-fugitive'
     -- 插入模式下快捷键
@@ -27,7 +25,7 @@ return {
     -- <C-n> Ctrl-Down/Up Shift-Arrows n/N [/] q Q
     { 'mg979/vim-visual-multi', branch = 'master' },
     -- i a I A   n l   aa ia
-    'wellle/targets.vim',
+    -- 'wellle/targets.vim',
     { 'Lokaltog/powerline', rtp = '/powerline/bindings/vim' },
     -- 'powerline/fonts',
     'bling/vim-bufferline',

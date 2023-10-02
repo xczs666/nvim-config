@@ -14,17 +14,17 @@ return {
                 require("lspconfig")[server_name].setup{}
             end,
             -- Next, you can provide targeted overrides for specific servers.
-            ["lua_ls"] = function ()
-                lspconfig.lua_ls.setup {
-                    settings = {
-                        Lua = {
-                            diagnostics = {
-                                globals = { "vim" }
-                            }
-                        }
-                    }
-                }
-            end,
+            -- ["lua_ls"] = function ()
+            --     lspconfig.lua_ls.setup {
+            --         settings = {
+            --             Lua = {
+            --                 diagnostics = {
+            --                     globals = { "vim" }
+            --                 }
+            --             }
+            --         }
+            --     }
+            -- end,
             ["clangd"] = function ()
                 lspconfig.clangd.setup {
                     cmd = {

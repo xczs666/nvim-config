@@ -4,6 +4,7 @@ vim.o.background = "dark"
 vim.o.termguicolors = true
 vim.o.timeout = true
 vim.o.timeoutlen = 300
+vim.o.exrc = true
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 -- vim.fn.input("lazypath: " .. lazypath)
