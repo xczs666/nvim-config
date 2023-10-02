@@ -44,3 +44,5 @@ vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.splitright = true
 
 require("essentials")
+-- vim.o.guifont = "Hack Nerd Font Mono:h16"
+vim.opt.guifont = { "Hack Nerd Font Mono", ":h16" }
