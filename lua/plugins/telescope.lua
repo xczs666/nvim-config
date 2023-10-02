@@ -14,6 +14,7 @@ return {
         },
         "LinArcX/telescope-command-palette.nvim",
     },
+    event = "VeryLazy",
     config = function()
         require('telescope').setup({
             extensions = {

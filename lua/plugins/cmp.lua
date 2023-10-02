@@ -15,6 +15,7 @@ return {
             }
         },
     },
+    event = "VeryLazy",
     config = function()
         local has_words_before = function()
             unpack = unpack or table.unpack
