@@ -5,7 +5,6 @@ return {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-cmdline",
-        "saadparwaiz1/cmp_luasnip",
         {
             "saadparwaiz1/cmp_luasnip",
             dependencies = {
@@ -24,8 +23,8 @@ return {
         end
         require("luasnip.loaders.from_vscode").lazy_load()
         local luasnip = require("luasnip")
-        local cmp = require 'cmp'
-        cmp.setup {
+        local cmp = require('cmp')
+        cmp.setup({
             snippet = {
                 expand = function(args)
                     require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
@@ -71,9 +70,9 @@ return {
             experimental = {
                 ghost_text = true,
             }
-        }
+        })
 
-        cmp.setup.cmdline('/', {
+        cmp.setup.cmdline({'/', '?'}, {
             mapping = cmp.mapping.preset.cmdline(),
             sources = {
                 { name = 'buffer' },
@@ -83,7 +82,8 @@ return {
         cmp.setup.cmdline(':', {
             mapping = cmp.mapping.preset.cmdline(),
             sources = cmp.config.sources({
-                { name = 'path' },
+                { name = 'path' }
+            }, {
                 { name = 'cmdline' }
             })
         })

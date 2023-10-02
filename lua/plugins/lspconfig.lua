@@ -4,8 +4,8 @@ return {
     dependencies = { "folke/neoconf.nvim", 'folke/neodev.nvim', { "j-hui/fidget.nvim", tag = "legacy", } },
     config = function()
         require("neoconf").setup()
-        require("neodev").setup({})
-        require("fidget").setup({})
+        require("neodev").setup()
+        require("fidget").setup()
         -- Setup language servers.
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
         -- local lspconfig = require('lspconfig')
