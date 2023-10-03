@@ -29,9 +29,18 @@ return {
                 -- ["1"] = "which_key_ignore", -- special label to hide it in the popup
                 -- b = { function() print("bar") end, "Foobar" }                               -- you can also pass functions!
             },
-            ["<leader>sl"] = { "<cmd>SessionManager load_session<cr>", "Session List" },
-            ["]c"] = "Git next_hunk",
-            ["[c"] = "Git prev_hunk",
+            ["<leader>sl"] = { "<cmd>sessionManager load_session<cr>", "Session List" },
+            ["cr"] = {
+                name = "+coercion",
+                m = {"[M]ixeCase", noremap = true},
+                c = {"[c]amelCase", noremap = true},
+                s = {"[s]nake_case", noremap = true},
+                u = {"[U]PPER_CASE", noremap = true},
+                t = {"[T]itle Case", noremap = true},
+                ["-"] = {"dash[-]case", noremap = true},
+                ["."] = {"dot[.]case", noremap = true},
+                [" "] = {"space[ ]case", noremap = true},
+            },
         })
     end,
     opts = {

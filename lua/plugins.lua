@@ -39,6 +39,7 @@ return {
     -- cr space case
     -- crt Title Case
     -- :h abolish
+    -- :Abolish
     -- :%S/facilit{y, ies}/building{,s}/g
     { 'tpope/vim-abolish',                    event = "VeryLazy", },
     -- <ENTER> <BS>

@@ -45,14 +45,44 @@ return {
                     enable = false
                 },
                 on_attach                    = function(bufnr)
-                    local function map(mode, lhs, rhs, opts)
-                        opts = vim.tbl_extend('force', { noremap = true, silent = true }, opts or {})
-                        vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts)
+                    local gs = package.loaded.gitsigns
+
+                    local function map(mode, l, r, opts)
+                        opts = opts or {}
+                        opts.buffer = bufnr
+                        vim.keymap.set(mode, l, r, opts)
                     end
 
                     -- Navigation
-                    map('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", { expr = true })
-                    map('n', '[c', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", { expr = true })
+                    map('n', ']c', function()
+                        if vim.wo.diff then return ']c' end
+                        vim.schedule(function() gs.next_hunk() end)
+                        return '<Ignore>'
+                    end, {expr=true, desc ="Git Next Hunk" })
+
+                    map('n', '[c', function()
+                        if vim.wo.diff then return '[c' end
+                        vim.schedule(function() gs.prev_hunk() end)
+                        return '<Ignore>'
+                    end, {expr=true, desc = "Git Prev Hunk"})
+
+                    -- Actions
+                    map('n', '<leader>hs', gs.stage_hunk, {desc = "[S]tage [H]unk-Accept"})
+                    map('n', '<leader>hr', gs.reset_hunk, {desc = "[R]eset [H]unk-Reset"} )
+                    map('v', '<leader>hs', function() gs.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end, {desc = "[S]tage [H]unk-Accept"})
+                    map('v', '<leader>hr', function() gs.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end, {desc = "[R]eset [H]unk-Reset"} )
+                    -- map('n', '<leader>hS', gs.stage_buffer)
+                    map('n', '<leader>hu', gs.undo_stage_hunk, {desc = "[U]ndo Stage [H]unk-Undo Accept"})
+                    map('n', '<leader>hR', gs.reset_buffer, {desc = "[R]eset [H]unk-Reset All"})
+                    map('n', '<leader>hp', gs.preview_hunk, {desc = "[P]review [H]unk-Preview"})
+                    map('n', '<leader>hb', function() gs.blame_line{full=true} end, {desc = "[B]lame Current Line"})
+                    map('n', '<leader>tb', gs.toggle_current_line_blame, {desc = "[T]oggle [B]lame"})
+                    map('n', '<leader>hd', gs.diffthis, {desc = "[D]iff This File"})
+                    map('n', '<leader>hD', function() gs.diffthis('~') end, {desc = "[D]iff HEAD~ This File"})
+                    map('n', '<leader>td', gs.toggle_deleted, {desc = "Toggle [D]eleted"})
+
+                    -- Text object
+                    map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>', {desc = "Select Hunk"})
                 end
             }
         end
