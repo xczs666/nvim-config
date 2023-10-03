@@ -13,6 +13,13 @@ return {
         auto_install = true,
         highlight = {
             enable = true,
+            disable = function(lang, buf)
+                local max_filesize = 10 * 1024 * 1024 -- 10 MB
+                local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+                if ok and stats and stats.size > max_filesize then
+                    return true
+                end
+            end,
         },
         indent = {
             enable = true
@@ -43,7 +50,7 @@ return {
                 -- mapping query_strings to modes.
                 selection_modes = {
                     ['@parameter.outer'] = 'v', -- charwise
-                    ['@function.outer'] = 'V', -- linewise
+                    ['@function.outer'] = 'V',  -- linewise
                     ['@class.outer'] = '<c-v>', -- blockwise
                 },
                 -- If you set this to `true` (default is `false`) then any textobject is
@@ -105,5 +112,6 @@ return {
                 }
             },
         },
+
     }
 }

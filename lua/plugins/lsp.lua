@@ -55,7 +55,7 @@ return {
                 local_opts.desc = "Hover"
                 vim.keymap.set('n', 'K', vim.lsp.buf.hover, local_opts)
                 local_opts.desc = "Implementation"
-                vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, local_opts)
+                vim.keymap.set('n', 'gI', vim.lsp.buf.implementation, local_opts)
                 local_opts.desc = "Signature"
                 vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, local_opts)
                 local_opts.desc = "Add Workdspace Folder"

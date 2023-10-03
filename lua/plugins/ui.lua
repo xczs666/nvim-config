@@ -19,11 +19,11 @@ return {
             require('alpha').setup(require('alpha.themes.dashboard').config)
         end
     },
-    {
-        "RRethy/vim-illuminate",
-        event = "VeryLazy",
-        config = function()
-            require('illuminate').configure()
-        end
-    },
+    -- {
+    --     "RRethy/vim-illuminate",
+    --     event = "VeryLazy",
+    --     config = function()
+    --         require('illuminate').configure()
+    --     end
+    -- },
 }
