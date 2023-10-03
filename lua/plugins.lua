@@ -57,7 +57,7 @@ return {
     { 'osyo-manga/vim-over',                  event = "VeryLazy" },
     { 'godlygeek/tabular',                    event = "VeryLazy", },
     { 'luochen1990/rainbow',                  event = "VeryLazy", },
-    { 'SidOfc/mkdx',                          event = "VeryLazy", },
+    { 'SidOfc/mkdx',                          ft = "markdown" },
     { 'tpope/vim-dadbod',                     event = "VeryLazy", },
     { 'kristijanhusak/vim-dadbod-ui',         event = "VeryLazy", },
     { 'kristijanhusak/vim-dadbod-completion', event = "VeryLazy", },
