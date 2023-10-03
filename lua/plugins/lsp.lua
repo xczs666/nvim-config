@@ -47,21 +47,34 @@ return {
 
                 -- Buffer local mappings.
                 -- See `:help vim.lsp.*` for documentation on any of the below functions
-                vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { buffer = ev.buf, desc = "Declaration" })
-                vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = ev.buf, desc = "Definition" })
-                vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = ev.buf, desc = "Hover" })
-                vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { buffer = ev.buf, desc = "Implementation" })
-                vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, { buffer = ev.buf, desc = "Signature" })
-                vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { buffer = ev.buf, desc = "Add Workdspace Folder" })
-                vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, { buffer = ev.buf, desc = "Remove Workspace Folder" })
+                local local_opts = { buffer = ev.buf, desc = nil }
+                local_opts.desc = "Declaration"
+                vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, local_opts)
+                local_opts.desc = "Definition"
+                vim.keymap.set('n', 'gd', vim.lsp.buf.definition, local_opts)
+                local_opts.desc = "Hover"
+                vim.keymap.set('n', 'K', vim.lsp.buf.hover, local_opts)
+                local_opts.desc = "Implementation"
+                vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, local_opts)
+                local_opts.desc = "Signature"
+                vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, local_opts)
+                local_opts.desc = "Add Workdspace Folder"
+                vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, local_opts)
+                local_opts.desc = "Remove Workdspace Folder"
+                vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, local_opts)
+                local_opts.desc = "List Workdspace Folders"
                 vim.keymap.set('n', '<leader>wl', function()
                     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-                end, { buffer = ev.buf, desc = "List Workdspace Folders" })
-                vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, { buffer = ev.buf, desc = "Type Definition" })
-                vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = ev.buf, desc = "Rename" })
-                vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, { buffer = ev.buf, desc = "Code Action" })
+                end, local_opts)
+                local_opts.desc = "Type Definition"
+                vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, local_opts)
+                local_opts.desc = "Rename"
+                vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, local_opts)
+                local_opts.desc = "Code Action"
+                vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, local_opts)
                 -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, { buffer = ev.buf, desc = "References" })
-                vim.keymap.set('n', '<leader>fe', function() vim.lsp.buf.format { async = true } end, { buffer = ev.buf, desc = "Format" })
+                local_opts.desc = "Format"
+                vim.keymap.set('n', '<leader>fe', function() vim.lsp.buf.format { async = true } end, local_opts)
             end,
         })
     end,
