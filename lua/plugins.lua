@@ -1,35 +1,26 @@
 return {
-    -- {'neoclide/coc.nvim', branch = 'release'},
     -- 'tpope/vim-fugitive'
     -- 插入模式下快捷键
-    { 'tpope/vim-rsi',                   event = "VeryLazy", },
-    -- 'scrooloose/nerdtree',
-    -- 'jistr/vim-nerdtree-tabs',
-    -- 'Xuyuanp/nerdtree-git-plugin',
-    -- 'altercation/vim-colors-solarized',
-    -- 'spf13/vim-colors',
+    { 'tpope/vim-rsi',                        event = "VeryLazy", },
     -- gr 匹配替换
-    { 'vim-scripts/ReplaceWithRegister', event = "VeryLazy", },
+    { 'vim-scripts/ReplaceWithRegister',      event = "VeryLazy", },
     -- sa sd sr
     -- i,I
-    { 'machakann/vim-sandwich',          event = "VeryLazy" },
+    { 'machakann/vim-sandwich',               event = "VeryLazy" },
     -- 快捷交换 cx cxc cxx
-    { 'tommcdo/vim-exchange',            event = "VeryLazy", },
-    { 'vim-scripts/DrawIt',              event = "VeryLazy", },
+    { 'tommcdo/vim-exchange',                 event = "VeryLazy", },
+    { 'vim-scripts/DrawIt',                   event = "VeryLazy", },
     -- f F t T 快捷移动提示
-    { 'unblevable/quick-scope',          event = "VeryLazy", },
+    { 'unblevable/quick-scope',               event = "VeryLazy", },
     -- 'jiangmiao/auto-pairs',
-    -- 'ctrlpvim/ctrlp.vim',
-    -- 'tacahiroy/ctrlp-funky',
     -- <C-n> Ctrl-Down/Up Shift-Arrows n/N [/] q Q
-    { 'mg979/vim-visual-multi',          branch = 'master',  event = "VeryLazy", },
+    { 'mg979/vim-visual-multi',               branch = 'master',     event = "VeryLazy", },
     -- i a I A   n l   aa ia
     -- 'wellle/targets.vim',
     -- { 'Lokaltog/powerline',     rtp = '/powerline/bindings/vim' },
-    -- 'powerline/fonts',
     -- 'bling/vim-bufferline',
     -- 'flazz/vim-colorschemes',
-    'mbbill/undotree',
+    { 'mbbill/undotree',                      cmd = "UndotreeToggle" },
     -- crm MixedCase
     -- crc camelCase
     -- crs snake_case
@@ -56,7 +47,7 @@ return {
     -- 'airblade/vim-gitgutter',
     { 'osyo-manga/vim-over',                  event = "VeryLazy" },
     { 'godlygeek/tabular',                    event = "VeryLazy", },
-    { 'luochen1990/rainbow',                  event = "VeryLazy", },
+    -- { 'luochen1990/rainbow',                  event = "VeryLazy", },
     { 'SidOfc/mkdx',                          ft = "markdown" },
     { 'tpope/vim-dadbod',                     event = "VeryLazy", },
     { 'kristijanhusak/vim-dadbod-ui',         event = "VeryLazy", },

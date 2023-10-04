@@ -21,7 +21,7 @@ return {
                 g = { "<cmd>Telescope live_grep<cr>", "Grep File" },
                 m = { "<cmd>Telescope marks<cr>", "Jump bookmarks" },
                 e = { "Format File" }, -- same as above
-                l = { "<cmd>Telescope command_history<cr>", "Command History" },
+                c = { "<cmd>Telescope command_history<cr>", "Command History" },
                 b = { "<cmd>Telescope buffers<cr>", "Buffers" },
                 j = { "<cmd>Telescope jumplist<cr>", "Jump List" },
                 w = { "<cmd>Telescope file_browser<cr>", "Browser File" },

@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- Netrw gx映射
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 0
 -- 检查是否支持 clipboard
 if vim.fn.has('clipboard') then
     -- 检查是否支持 + 寄存器
