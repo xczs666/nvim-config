@@ -46,33 +46,33 @@ return {
             })
         end
     },
-    {
-        "https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
-        -- Bracket pair rainbow colorize
-        config = function()
-            local rainbow_delimiters = require 'rainbow-delimiters'
-
-            vim.g.rainbow_delimiters = {
-                strategy = {
-                    [''] = rainbow_delimiters.strategy['global'],
-                    vim = rainbow_delimiters.strategy['local'],
-                },
-                query = {
-                    [''] = 'rainbow-delimiters',
-                    lua = 'rainbow-blocks',
-                },
-                highlight = {
-                    'RainbowDelimiterRed',
-                    'RainbowDelimiterYellow',
-                    'RainbowDelimiterBlue',
-                    'RainbowDelimiterOrange',
-                    'RainbowDelimiterGreen',
-                    'RainbowDelimiterViolet',
-                    'RainbowDelimiterCyan',
-                },
-            }
-        end
-    },
+    -- {
+    --     "https://gitlab.com/HiPhish/rainbow-delimiters.nvim", 存在性能问题!!!!!
+    --     -- Bracket pair rainbow colorize
+    --     config = function()
+    --         local rainbow_delimiters = require 'rainbow-delimiters'
+    --
+    --         vim.g.rainbow_delimiters = {
+    --             strategy = {
+    --                 [''] = rainbow_delimiters.strategy['global'],
+    --                 vim = rainbow_delimiters.strategy['local'],
+    --             },
+    --             query = {
+    --                 [''] = 'rainbow-delimiters',
+    --                 lua = 'rainbow-blocks',
+    --             },
+    --             highlight = {
+    --                 'RainbowDelimiterRed',
+    --                 'RainbowDelimiterYellow',
+    --                 'RainbowDelimiterBlue',
+    --                 'RainbowDelimiterOrange',
+    --                 'RainbowDelimiterGreen',
+    --                 'RainbowDelimiterViolet',
+    --                 'RainbowDelimiterCyan',
+    --             },
+    --         }
+    --     end
+    -- },
     {
         -- 基于nvim-treesitter的上文文固定插件。 它可以将当前函数的函数头固定在neovim界面的前几行，让你知道当前在编辑的是什么类、函数或方法。
         "https://github.com/nvim-treesitter/nvim-treesitter-context",
