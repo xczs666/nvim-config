@@ -17,6 +17,18 @@ return {
     event = "VeryLazy",
     config = function()
         require('telescope').setup({
+            defaults = {
+                mappings = {
+                    i = {
+                        ["<C-b>"] = require "telescope.actions".results_scrolling_up,
+                        ["<C-f>"] = require "telescope.actions".results_scrolling_down,
+                    },
+                    n = {
+                        ["<C-b>"] = require "telescope.actions".results_scrolling_up,
+                        ["<C-f>"] = require "telescope.actions".results_scrolling_down,
+                    },
+                }
+            },
             extensions = {
                 fzf = {
                     fuzzy = true,                   -- false will only do exact matching
