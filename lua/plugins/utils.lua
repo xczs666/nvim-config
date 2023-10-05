@@ -76,9 +76,9 @@ return {
     {
         -- 基于nvim-treesitter的上文文固定插件。 它可以将当前函数的函数头固定在neovim界面的前几行，让你知道当前在编辑的是什么类、函数或方法。
         "https://github.com/nvim-treesitter/nvim-treesitter-context",
-        -- cmd = { "TSContextToggle" },
+        cmd = { "TSContextToggle" },
         keys = {
-            { "<leader>sf", "<cmd>TSContextToggle<cr>", mode = "n", desc = "[S]how [F]unction Message" }
+            { "<leader>sf", "<cmd>TSContextToggle<cr>", mode = "n", desc = "[S]how [F]unction Message" },
         },
         config = function()
             require("treesitter-context").setup({
