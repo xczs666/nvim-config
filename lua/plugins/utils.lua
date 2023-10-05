@@ -311,19 +311,10 @@ return {
         opts = { useDefaultKeymaps = true },
     },
 
-    -- {
-    --     "chrisgrieser/nvim-spider",
-    --     keys = {
-    --         { "w",  "<cmd>lua require('spider').motion('w')<CR>",  mode = { "n", "o", "x" }, desc = "Spider-w" },
-    --         { "e",  "<cmd>lua require('spider').motion('e')<CR>",  mode = { "n", "o", "x" }, desc = "Spider-e" },
-    --         { "b",  "<cmd>lua require('spider').motion('b')<CR>",  mode = { "n", "o", "x" }, desc = "Spider-b" },
-    --         { "ge", "<cmd>lua require('spider').motion('ge')<CR>", mode = { "n", "o", "x" }, desc = "Spider-ge" },
-    --     },
-    -- },
-
     {
         -- https://github.com/chaoren/vim-wordmotion
-        "https://github.com/bkad/CamelCaseMotion",
+        -- "https://github.com/bkad/CamelCaseMotion",
+        "chrisgrieser/nvim-spider",
         keys = {
             { "<leader>wj", "<cmd>lua WordJumpToggle()<CR>", mode = "n", desc = "[W]ord [J]ump" },
         },
@@ -356,10 +347,14 @@ return {
 
             -- 设置 w,e,b 映射
             function WordJumpToggle()
-                set_mapping('w', '<Plug>CamelCaseMotion_w')
-                set_mapping('e', '<Plug>CamelCaseMotion_e')
-                set_mapping('b', '<Plug>CamelCaseMotion_b')
-                set_mapping('ge', '<Plug>CamelCaseMotion_ge')
+                -- set_mapping('w', '<Plug>CamelCaseMotion_w')
+                -- set_mapping('e', '<Plug>CamelCaseMotion_e')
+                -- set_mapping('b', '<Plug>CamelCaseMotion_b')
+                -- set_mapping('ge', '<Plug>CamelCaseMotion_ge')
+                set_mapping('w', "<cmd>lua require('spider').motion('w')<CR>")
+                set_mapping('e', "<cmd>lua require('spider').motion('e')<CR>")
+                set_mapping('b', "<cmd>lua require('spider').motion('b')<CR>")
+                set_mapping('ge', "<cmd>lua require('spider').motion('ge')<CR>")
             end
         end
     }
