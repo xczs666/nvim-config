@@ -16,16 +16,40 @@ return {
     },
     event = "VeryLazy",
     config = function()
+        local actions = require("telescope.actions")
+
+        -- local open_with_trouble = function(...)
+        --     return require("trouble.providers.telescope").open_with_trouble(...)
+        -- end
+        -- local open_selected_with_trouble = function(...)
+        --     return require("trouble.providers.telescope").open_selected_with_trouble(...)
+        -- end
+        -- local find_files_no_ignore = function()
+        --     local action_state = require("telescope.actions.state")
+        --     local line = action_state.get_current_line()
+        --     Util.telescope("find_files", { no_ignore = true, default_text = line })()
+        -- end
+        -- local find_files_with_hidden = function()
+        --     local action_state = require("telescope.actions.state")
+        --     local line = action_state.get_current_line()
+        --     Util.telescope("find_files", { hidden = true, default_text = line })()
+        -- end
+
         require('telescope').setup({
             defaults = {
                 mappings = {
                     i = {
-                        ["<C-b>"] = require "telescope.actions".results_scrolling_up,
-                        ["<C-f>"] = require "telescope.actions".results_scrolling_down,
+                        -- ["<c-t>"] = open_with_trouble,
+                        -- ["<a-t>"] = open_selected_with_trouble,
+                        -- ["<a-i>"] = find_files_no_ignore,
+                        -- ["<a-h>"] = find_files_with_hidden,
+                        ["<C-Down>"] = actions.cycle_history_next,
+                        ["<C-Up>"] = actions.cycle_history_prev,
+                        ["<C-b>"] = actions.results_scrolling_up,
+                        ["<C-f>"] = actions.results_scrolling_down,
                     },
                     n = {
-                        ["<C-b>"] = require "telescope.actions".results_scrolling_up,
-                        ["<C-f>"] = require "telescope.actions".results_scrolling_down,
+                        ["q"] = actions.close,
                     },
                 }
             },

@@ -269,8 +269,9 @@ return {
                     prev_selection = ",",
                     keymaps = {
                         ["m"] = "textsubjects-smart",
-                        [";"] = "textsubjects-container-outer",
-                        ["i;"] = "textsubjects-container-inner",
+                        -- 和f/t重复执行冲突
+                        -- [";"] = "textsubjects-container-outer",
+                        -- ["i;"] = "textsubjects-container-inner",
                     },
                 },
             })
