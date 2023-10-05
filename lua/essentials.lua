@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader='\\'
 -- Netrw gx映射
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 0
@@ -73,3 +74,9 @@ vim.opt.guifont = { "Hack Nerd Font Mono", ":h16" }
 
 vim.keymap.set("n", "<A-Tab>", "<cmd>bNext<cr>", { silent = true, desc = "Buffer next" })
 vim.keymap.set("n", "<leader>bc", "<cmd>bd<cr>", { desc = "Buffer delete" })
+
+vim.keymap.set({"n","v"}, "<leader>a|", "<cmd>Tabularize /|<CR>")
+vim.keymap.set({"n","v"}, "<leader>a=", "<cmd>Tabularize /^[^=]*\\zs=<CR>")
+vim.keymap.set({"n","v"}, "<leader>a:", "<cmd>Tabularize /:<CR>")
+vim.keymap.set({"n","v"}, "<leader>a,", "<cmd>Tabularize /,\\zs/l0r1<CR>")
+

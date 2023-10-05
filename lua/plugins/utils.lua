@@ -259,14 +259,13 @@ return {
         -- v;：选中容器外围
         -- vi;：选中容器内
         "RRethy/nvim-treesitter-textsubjects",
-        after = "nvim-treesitter",
         dependencies = { "nvim-treesitter/nvim-treesitter" },
         event = "VeryLazy",
         config = function()
             require("nvim-treesitter.configs").setup({
                 textsubjects = {
                     enable = true,
-                    prev_selection = ",",
+                    prev_selection = "M",
                     keymaps = {
                         ["m"] = "textsubjects-smart",
                         -- 和f/t重复执行冲突
