@@ -1,12 +1,34 @@
 return {
     "folke/noice.nvim",
+    event = "VeryLazy",
     dependencies = {
         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
         "MunifTanjim/nui.nvim",
         -- OPTIONAL:
         --   `nvim-notify` is only needed, if you want to use the notification view.
         --   If not available, we use `mini` as the fallback
-        "rcarriga/nvim-notify",
+        {
+            "rcarriga/nvim-notify",
+            -- lazy = true,
+            -- event = "VeryLazy",
+            main = "notify",
+            opts = {
+                -- :h notify.setup()
+                -- "fade", "slide", "fade_in_slide_out", "static"
+                stages = "slide",
+                on_open = nil,
+                on_close = nil,
+                timeout = 500,
+                -- fps = 1,
+                render = "default",
+                background_colour = "Normal",
+                max_width = math.floor(vim.api.nvim_win_get_width(0) / 3),
+                max_height = math.floor(vim.api.nvim_win_get_height(0) / 4),
+                -- minimum_width = 50,
+                -- ERROR > WARN > INFO > DEBUG > TRACE
+                level = "INFO",
+            },
+        },
     },
     config = function()
         require("noice").setup({
