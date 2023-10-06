@@ -79,4 +79,5 @@ vim.keymap.set({"n","v"}, "<leader>a|", "<cmd>Tabularize /|<CR>")
 vim.keymap.set({"n","v"}, "<leader>a=", "<cmd>Tabularize /^[^=]*\\zs=<CR>")
 vim.keymap.set({"n","v"}, "<leader>a:", "<cmd>Tabularize /:<CR>")
 vim.keymap.set({"n","v"}, "<leader>a,", "<cmd>Tabularize /,\\zs/l0r1<CR>")
-
+-- command 命令影响记录以分割窗显示
+vim.o.inccommand = "split"

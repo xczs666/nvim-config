@@ -246,6 +246,7 @@ return {
         main = "search-replace",
         keys = {
             { "<leader>rs", "<CMD>SearchReplaceSingleBufferSelections<CR>", mode = "n", desc = "[R]eplace [S]elections" },
+            { "<leader>ro", "<CMD>SearchReplaceWithinVisualSelection<CR>",  mode = "v", desc = "[R]eplace [O]pen" },
             { "<leader>ro", "<CMD>SearchReplaceSingleBufferOpen<CR>",       mode = "n", desc = "[R]eplace [O]pen" },
         },
         opts = {
