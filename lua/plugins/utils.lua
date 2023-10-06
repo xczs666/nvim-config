@@ -242,14 +242,17 @@ return {
 
     {
         "https://github.com/roobert/search-replace.nvim",
-        event = "VeryLazy",
-        config = function()
-            require("search-replace").setup({
-                -- optionally override defaults
-                default_replace_single_buffer_options = "gcI",
-                default_replace_multi_buffer_options = "egcI",
-            })
-        end,
+        event = { "CmdlineEnter" },
+        main = "search-replace",
+        keys = {
+            { "<leader>rs", "<CMD>SearchReplaceSingleBufferSelections<CR>", mode = "n", desc = "[R]eplace [S]elections" },
+            { "<leader>ro", "<CMD>SearchReplaceSingleBufferOpen<CR>",       mode = "n", desc = "[R]eplace [O]pen" },
+        },
+        opts = {
+            -- optionally override defaults
+            default_replace_single_buffer_options = "gcI",
+            default_replace_multi_buffer_options = "egcI",
+        }
     },
 
     {
