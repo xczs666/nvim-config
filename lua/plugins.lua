@@ -21,7 +21,7 @@ return {
     -- { 'Lokaltog/powerline',     rtp = '/powerline/bindings/vim' },
     -- 'bling/vim-bufferline',
     -- 'flazz/vim-colorschemes',
-    { 'mbbill/undotree',                 cmd = "UndotreeToggle" },
+    { 'mbbill/undotree',                 cmd = "UndotreeToggle", config = function () vim.g.undotree_SetFocusWhenToggle = 1 end },
     -- crm MixedCase
     -- crc camelCase
     -- crs snake_case

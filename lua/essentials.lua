@@ -40,11 +40,14 @@ vim.o.backup = false
 vim.o.showmode = false
 vim.o.tabstop = 4        -- 制表符宽度
 vim.o.shiftwidth = 4     -- 缩进宽度
+vim.o.softtabstop = 4    -- Let backspace delete indent
 vim.o.expandtab = true   -- 制表符转为空格
 vim.o.shiftround = true  -- 缩进为倍数
 vim.o.autoindent = true  -- 启用自动缩进
 vim.o.smartindent = true -- 启用智能缩进
 vim.o.number = true      -- 显示行号
+vim.g.joinspaces = false -- false: Vim 在执行操作时将会保留单词之间的空格，不进行合并
+vim.o.conceallevel = 2
 -- vim.o.relativenumber = true -- 显示相对行号
 -- 插入模式下显示绝对行号
 vim.cmd([[
