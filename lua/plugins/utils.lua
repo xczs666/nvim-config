@@ -222,7 +222,7 @@ return {
                 elseif #lines > 1 then
                     secondLine = lines[2]
                 end
-                if secondLine ~= nil then
+                if secondLine ~= nil and curWidth == 0 then
                     table.insert(newVirtText, { secondLine, "AdCustomFold" })
                 end
 
