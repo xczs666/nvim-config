@@ -361,6 +361,44 @@ return {
                 set_mapping('ge', "<cmd>lua require('spider').motion('ge')<CR>")
             end
         end
-    }
+    },
+
+    {
+        "LunarVim/bigfile.nvim",
+        event = { "FileReadPre", "BufReadPre", "User FileOpened" },
+        config = function ()
+            require("bigfile").setup({
+                filesize = 10, -- size of the file in MiB, the plugin round file sizes to the closest MiB
+                pattern = { "*" }, -- autocmd pattern or function see <### Overriding the detection of big files>
+                features = { -- features to disable
+                    "indent_blankline",
+                    "illuminate",
+                    "lsp",
+                    "treesitter",
+                    -- "syntax", -- `:syntax off` for the buffer
+                    "matchparen",
+                    -- "vimopts", -- `swapfile = false` `foldmethod = "manual"` `undolevels = -1` `undoreload = 0` `list = false` for the buffer
+                    "filetype", -- `filetype = ""` for the buffer
+                    {
+                        name = "vimconfig", -- vimopts
+                        disable = function()
+                            vim.opt_local.swapfile = false
+                            vim.opt_local.foldmethod = "indent"
+                            vim.opt_local.undolevels = 10
+                            vim.opt_local.undoreload = 0
+                            vim.opt_local.list = false
+                            vim.g.lazyredraw = true -- 优化宏,替换等批量动作
+                        end,
+                    },
+                    {
+                        name = "disableAutoSave", -- 907th/vim-auto-save
+                        disable = function()
+                            vim.g.auto_save = 0
+                        end,
+                    }
+                },
+            })
+        end
+    },
 
 }

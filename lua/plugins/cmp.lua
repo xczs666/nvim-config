@@ -58,7 +58,7 @@ return {
         },
 
     },
-    event = "InsertEnter",
+    event = {"InsertEnter", "CmdlineEnter"},
     config = function()
         local has_words_before = function()
             unpack = unpack or table.unpack
@@ -78,7 +78,22 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'path' },
                 { name = 'luasnip' },
-                { name = "buffer" },
+                {
+                    name = "buffer",
+                    option = {
+                        indexing_interval = 20,
+                        indexing_batch_size = 1000,
+                        max_indexed_line_length = 1024,
+                        get_bufnrs = function()
+                            local buf = vim.api.nvim_get_current_buf()
+                            local byte_size = vim.api.nvim_buf_get_offset(buf, vim.api.nvim_buf_line_count(buf))
+                            if byte_size > 10 * 1024 * 1024 then -- 1 Megabyte max
+                                return {}
+                            end
+                            return { buf }
+                        end
+                    },
+                },
             },
             mapping = cmp.mapping.preset.insert {
                 ["<Tab>"] = cmp.mapping(function(fallback)

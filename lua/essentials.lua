@@ -73,6 +73,7 @@ vim.opt.splitright = true
 -- vim.o.guifont = "Hack Nerd Font Mono:h16"
 vim.opt.guifont = { "Hack Nerd Font Mono", ":h16" }
 
+vim.g.lazyredraw = true -- 优化宏,替换等批量动作
 
 
 vim.keymap.set("n", "<A-Tab>", "<cmd>bNext<cr>", { silent = true, desc = "Buffer next" })
