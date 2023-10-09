@@ -85,6 +85,19 @@ vim.keymap.set({ "n", "v" }, "<leader>a:", "<cmd>Tabularize /:<CR>")
 vim.keymap.set({ "n", "v" }, "<leader>a,", "<cmd>Tabularize /,\\zs/l0r1<CR>")
 
 -- tmux不支持<C-;>
--- vim.keymap.set({"n","v"}, "<C-;>", ":", {noremap = true})
+vim.keymap.set({"n","v"}, "<C-;>", ":", {noremap = true})
 -- command 命令影响记录以分割窗显示
 -- vim.o.inccommand = "split"
+
+-- 设置键盘映射以触发 increase_height 函数
+-- vim.api.nvim_set_keymap('n', '<C-+>', "<cmd>resize +" .. vim.fn.v:count1, { noremap = true, silent = true })
+
+-- vim.keymap.set('n', "<C-+>", "<cmd>resize +" .. vim.v.count1 .. '<cr>', { noremap = true, expr = true })
+
+vim.cmd[[nnoremap <expr> <C-+> ':resize +' . v:count1 . '<CR>']]
+vim.cmd[[nnoremap <expr> <C-_> ':resize -' . v:count1 . '<CR>']]
+
+
+
+
+
