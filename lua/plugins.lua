@@ -37,7 +37,6 @@ return {
     -- <ENTER> <BS>
     -- 'gcmt/wildfire.vim',
     -- 'voldikss/vim-floaterm',
-    -- 'junegunn/fzf',
     -- Files GFiles GFiles? Buffers History History: History/ Helptags Filetypes Maps
     -- 'junegunn/fzf.vim',
     -- ii ai aI
@@ -49,7 +48,7 @@ return {
     { 'osyo-manga/vim-over',             event = "VeryLazy" },
     { 'godlygeek/tabular',               cmd = "Tabularize", },
     -- { 'luochen1990/rainbow',                  event = "VeryLazy", },
-    { 'SidOfc/mkdx',                     ft = "markdown" },
+    { 'SidOfc/mkdx',                     ft = "markdown",                dependencies = { 'junegunn/fzf', } },
     { 'kristijanhusak/vim-dadbod-ui',    cmd = { "DBUI", "DBUIToggle" }, dependencies = { 'tpope/vim-dadbod', 'kristijanhusak/vim-dadbod-completion', } },
     '907th/vim-auto-save',
     'ybian/smartim',
