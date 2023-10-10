@@ -15,7 +15,7 @@ return {
     { 'unblevable/quick-scope',          event = "VeryLazy", },
     -- 'jiangmiao/auto-pairs',
     -- <C-n> Ctrl-Down/Up Shift-Arrows n/N [/] q Q
-    { 'mg979/vim-visual-multi',          branch = 'master',    event = "VeryLazy", },
+    { 'mg979/vim-visual-multi',          branch = 'master',      event = "VeryLazy", },
     -- i a I A   n l   aa ia
     -- 'wellle/targets.vim',
     -- { 'Lokaltog/powerline',     rtp = '/powerline/bindings/vim' },
@@ -46,7 +46,7 @@ return {
     -- gitsigns 替代
     -- 'airblade/vim-gitgutter',
     { 'osyo-manga/vim-over',             event = "VeryLazy" },
-    { 'godlygeek/tabular',               cmd = "Tabularize", },
+    { 'godlygeek/tabular',               cmd = "Tabularize",             dependencies = { 'quentindecock/vim-cucumber-align-pipes' } },
     -- { 'luochen1990/rainbow',                  event = "VeryLazy", },
     { 'SidOfc/mkdx',                     ft = "markdown",                dependencies = { 'junegunn/fzf', } },
     { 'kristijanhusak/vim-dadbod-ui',    cmd = { "DBUI", "DBUIToggle" }, dependencies = { 'tpope/vim-dadbod', 'kristijanhusak/vim-dadbod-completion', } },
