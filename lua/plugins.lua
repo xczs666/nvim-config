@@ -33,7 +33,7 @@ return {
     -- :h abolish
     -- :Abolish
     -- :%S/facilit{y, ies}/building{,s}/g
-    { 'tpope/vim-abolish',               event = "VeryLazy", },
+    { 'tpope/vim-abolish', },
     -- <ENTER> <BS>
     -- 'gcmt/wildfire.vim',
     -- 'voldikss/vim-floaterm',
