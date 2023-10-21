@@ -18,7 +18,7 @@ return {
                 stages = "slide",
                 on_open = nil,
                 on_close = nil,
-                timeout = 500,
+                timeout = 1000,
                 -- fps = 1,
                 render = "default",
                 background_colour = "Normal",

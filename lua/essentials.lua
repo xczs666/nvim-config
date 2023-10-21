@@ -86,6 +86,7 @@ vim.keymap.set("n", "<leader>bc", "<cmd>bd<cr>", { desc = "Buffer delete" })
 vim.keymap.set("n", "<F3>", "<cmd>bnext<cr>", { silent = true, desc = "Buffer next" })
 vim.keymap.set("n", "<F2>", "<cmd>bprevious<cr>", { silent = true, desc = "Buffer previous" })
 vim.keymap.set("n", "<F1>", "<cmd>Telescope buffers<cr>", { silent = true, desc = "Buffers" })
+vim.keymap.set("n", "<leader>cs", "<cmd>let @/=\"\"<cr>", { silent = true, desc = "[C]lear [S]earch" })
 
 vim.keymap.set({ "n", "v" }, "<leader>a|", "<cmd>Tabularize /|<CR>")
 vim.keymap.set({ "n", "v" }, "<leader>a=", "<cmd>Tabularize /^[^=]*\\zs=<CR>")
