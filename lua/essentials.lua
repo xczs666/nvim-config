@@ -76,6 +76,11 @@ vim.opt.guifont = { "Hack Nerd Font Mono", ":h16" }
 vim.g.lazyredraw = true -- 优化宏,替换等批量动作
 
 
+-- vim.keymap.set('i', '<D-v>', '<C-r><C-o>+')                                     -- paste (insert)
+-- vim.keymap.set('n', '<D-v>', 'i<C-r><C-o>+<ESC>l')                              -- paste (normal)
+-- vim.keymap.set('x', '<D-v>', '"+P')                                             -- paste (visual)
+-- vim.keymap.set('c', '<D-v>', '<C-r>+')                                          -- paste (command)
+
 vim.keymap.set("n", "<A-Tab>", "<cmd>bNext<cr>", { silent = true, desc = "Buffer next" })
 vim.keymap.set("n", "<leader>bc", "<cmd>bd<cr>", { desc = "Buffer delete" })
 vim.keymap.set("n", "<F3>", "<cmd>bnext<cr>", { silent = true, desc = "Buffer next" })
