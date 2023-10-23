@@ -86,7 +86,9 @@ vim.keymap.set("n", "<leader>bc", "<cmd>bd<cr>", { desc = "Buffer delete" })
 vim.keymap.set("n", "<F3>", "<cmd>bnext<cr>", { silent = true, desc = "Buffer next" })
 vim.keymap.set("n", "<F2>", "<cmd>bprevious<cr>", { silent = true, desc = "Buffer previous" })
 vim.keymap.set("n", "<F1>", "<cmd>Telescope buffers<cr>", { silent = true, desc = "Buffers" })
-vim.keymap.set("n", "<leader>cs", "<cmd>let @/=\"\"<cr>", { silent = true, desc = "[C]lear [S]earch" })
+vim.keymap.set("n", "<leader>ce", "<cmd>let @/=\"\"<cr>", { silent = true, desc = "[C]lean s[e]arch" })
+vim.keymap.set('v', '<leader>|', [[:lua MoveVisualCursor()<CR>]], { noremap = true, silent = true })
+
 
 vim.keymap.set({ "n", "v" }, "<leader>a|", "<cmd>Tabularize /|<CR>")
 vim.keymap.set({ "n", "v" }, "<leader>a=", "<cmd>Tabularize /^[^=]*\\zs=<CR>")
@@ -94,7 +96,7 @@ vim.keymap.set({ "n", "v" }, "<leader>a:", "<cmd>Tabularize /:<CR>")
 vim.keymap.set({ "n", "v" }, "<leader>a,", "<cmd>Tabularize /,\\zs/l0r1<CR>")
 
 -- tmux不支持<C-;>
-vim.keymap.set({"n","v"}, "<C-;>", ":", {noremap = true})
+vim.keymap.set({ "n", "v" }, "<C-;>", ":", { noremap = true })
 -- command 命令影响记录以分割窗显示
 -- vim.o.inccommand = "split"
 
@@ -103,10 +105,18 @@ vim.keymap.set({"n","v"}, "<C-;>", ":", {noremap = true})
 
 -- vim.keymap.set('n', "<C-+>", "<cmd>resize +" .. vim.v.count1 .. '<cr>', { noremap = true, expr = true })
 
-vim.cmd[[nnoremap <expr> <C-+> ':resize +' . v:count1 . '<CR>']]
-vim.cmd[[nnoremap <expr> <C-_> ':resize -' . v:count1 . '<CR>']]
+vim.cmd [[nnoremap <expr> <C-+> ':resize +' . v:count1 . '<CR>']]
+vim.cmd [[nnoremap <expr> <C-_> ':resize -' . v:count1 . '<CR>']]
 
 
 
-
-
+function MoveVisualCursor()
+    local start_line = vim.fn.line("'<")
+    local start_col = vim.fn.col("'<")
+    local end_line = vim.fn.line("'>")
+    -- local end_col = vim.fn.col("'>")
+    local current_win = vim.api.nvim_get_current_win()
+    -- vim.fn.confirm(start_col)
+    vim.api.nvim_win_set_cursor(current_win, { start_line, start_col - 1 })
+    vim.cmd("normal! " .. end_line - start_line .. "j")
+end
