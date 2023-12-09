@@ -88,6 +88,7 @@ vim.keymap.set("n", "<F2>", "<cmd>bprevious<cr>", { silent = true, desc = "Buffe
 vim.keymap.set("n", "<F1>", "<cmd>Telescope buffers<cr>", { silent = true, desc = "Buffers" })
 vim.keymap.set("n", "<leader>ce", "<cmd>let @/=\"\"<cr>", { silent = true, desc = "[C]lean s[e]arch" })
 vim.keymap.set('v', '<leader>|', [[:lua MoveVisualCursor()<CR>]], { noremap = true, silent = true })
+vim.keymap.set('n', '<D-CR>', "o<ESC>", { noremap = true, silent = true })
 
 
 vim.keymap.set({ "n", "v" }, "<leader>a|", "<cmd>Tabularize /|<CR>")
