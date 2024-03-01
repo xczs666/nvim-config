@@ -54,4 +54,6 @@ return {
     'ybian/smartim',
     -- statusline
     -- 'vim-airline/vim-airline-themes',
+    -- 快捷键gs,<c-a>,<c-x> https://github.com/AndrewRadev/switch.vim?tab=readme-ov-file
+    { 'AndrewRadev/switch.vim',          dependencies = { 'tpope/vim-speeddating' }, config = function () vim.cmd[[ call SwitchConfig()]] end },
 }
