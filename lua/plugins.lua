@@ -7,7 +7,7 @@ return {
     -- sa sd sr
     -- i,I
     { 'machakann/vim-sandwich',          event = "VeryLazy" },
-    -- 快捷交换 cx cxc cxx
+    -- 快捷交换 cx cxc cxx X
     { 'tommcdo/vim-exchange',            event = "VeryLazy", },
     { 'vim-scripts/DrawIt',              keys = { { "<localleader>di", mode = "n", "<Plug>DrawItStart", desc = "DrawItStart" },
                                                   { "<localleader>ds", mode = "n", "<Plug>DrawItStop",  desc = "DrawItStop"  }, } },

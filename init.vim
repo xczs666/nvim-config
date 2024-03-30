@@ -1,1 +1,1 @@
-/Users/chenzhi.xu/.spf13-vim-3/.vimrc
+/Users/xcz/.spf13-vim-3/.vimrc

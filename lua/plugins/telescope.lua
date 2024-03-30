@@ -1,6 +1,6 @@
 return {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.3',
+    -- tag = '0.1.3',
     dependencies = { 'nvim-lua/plenary.nvim',
         "nvim-telescope/telescope-file-browser.nvim",
         {
@@ -10,7 +10,10 @@ return {
         },
         {
             "nvim-telescope/telescope-frecency.nvim",
-            dependencies = { "kkharji/sqlite.lua" },
+            -- dependencies = { "kkharji/sqlite.lua" },
+            config = function()
+                require("telescope").load_extension "frecency"
+            end,
         },
         "LinArcX/telescope-command-palette.nvim",
     },
