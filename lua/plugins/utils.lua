@@ -324,52 +324,55 @@ return {
         opts = { useDefaultKeymaps = true },
     },
 
+        "bkad/CamelCaseMotion",
+
     {
-        -- https://github.com/chaoren/vim-wordmotion
-        -- "https://github.com/bkad/CamelCaseMotion",
-        "chrisgrieser/nvim-spider",
-        keys = {
-            { "<leader>wj", "<cmd>lua WordJumpToggle()<CR>", mode = "n", desc = "[W]ord [J]ump" },
-        },
-        config = function()
-            -- 检查是否存在已经映射的键
-            local function is_key_mapped(key)
-                local mappings = vim.api.nvim_get_keymap('n')
-                for _, mapping in ipairs(mappings) do
-                    if mapping.lhs == key then
-                        return true
-                    end
-                end
-                return false
-            end
-
-            -- 设置映射或删除映射
-            local function set_mapping(key, plug)
-                if is_key_mapped(key) then
-                    vim.keymap.del({ "n", "o", "x" }, key)
-                    vim.notify("Disable", vim.log.levels.INFO,
-                        { title = "驼峰跳转", timeout = 100, icon = "", style = "Information",
-                        })
-                else
-                    vim.keymap.set({ "n", "o", "x" }, key, plug, { noremap = true, silent = true })
-                    vim.notify("Enable", vim.log.levels.INFO,
-                        { title = "驼峰跳转", timeout = 100, icon = "", style = "Information",
-                        })
-                end
-            end
-
-            -- 设置 w,e,b 映射
-            function WordJumpToggle()
-                -- set_mapping('w', '<Plug>CamelCaseMotion_w')
-                -- set_mapping('e', '<Plug>CamelCaseMotion_e')
-                -- set_mapping('b', '<Plug>CamelCaseMotion_b')
-                -- set_mapping('ge', '<Plug>CamelCaseMotion_ge')
-                set_mapping('w', "<cmd>lua require('spider').motion('w')<CR>")
-                set_mapping('e', "<cmd>lua require('spider').motion('e')<CR>")
-                set_mapping('b', "<cmd>lua require('spider').motion('b')<CR>")
-                set_mapping('ge', "<cmd>lua require('spider').motion('ge')<CR>")
-            end
-        end
+        -- also see: https://github.com/chaoren/vim-wordmotion
+        -- also see: "https://github.com/bkad/CamelCaseMotion",
+        "bkad/CamelCaseMotion",
+    --     "chrisgrieser/nvim-spider",
+    --     keys = {
+    --         { "<leader>wj", "<cmd>lua WordJumpToggle()<CR>", mode = "n", desc = "[W]ord [J]ump" },
+    --     },
+    --     config = function()
+    --         -- 检查是否存在已经映射的键
+    --         local function is_key_mapped(key)
+    --             local mappings = vim.api.nvim_get_keymap('n')
+    --             for _, mapping in ipairs(mappings) do
+    --                 if mapping.lhs == key then
+    --                     return true
+    --                 end
+    --             end
+    --             return false
+    --         end
+    --
+    --         -- 设置映射或删除映射
+    --         local function set_mapping(key, plug)
+    --             if is_key_mapped(key) then
+    --                 vim.keymap.del({ "n", "o", "x" }, key)
+    --                 vim.notify("Disable", vim.log.levels.INFO,
+    --                     { title = "驼峰跳转", timeout = 100, icon = "", style = "Information",
+    --                     })
+    --             else
+    --                 vim.keymap.set({ "n", "o", "x" }, key, plug, { noremap = true, silent = true })
+    --                 vim.notify("Enable", vim.log.levels.INFO,
+    --                     { title = "驼峰跳转", timeout = 100, icon = "", style = "Information",
+    --                     })
+    --             end
+    --         end
+    --
+    --         -- 设置 w,e,b 映射
+    --         function WordJumpToggle()
+    --             -- set_mapping('w', '<Plug>CamelCaseMotion_w')
+    --             -- set_mapping('e', '<Plug>CamelCaseMotion_e')
+    --             -- set_mapping('b', '<Plug>CamelCaseMotion_b')
+    --             -- set_mapping('ge', '<Plug>CamelCaseMotion_ge')
+    --             set_mapping('w', "<cmd>lua require('spider').motion('w')<CR>")
+    --             set_mapping('e', "<cmd>lua require('spider').motion('e')<CR>")
+    --             set_mapping('b', "<cmd>lua require('spider').motion('b')<CR>")
+    --             set_mapping('ge', "<cmd>lua require('spider').motion('ge')<CR>")
+    --         end
+    --     end
     },
 
     {
