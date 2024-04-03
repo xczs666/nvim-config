@@ -109,9 +109,6 @@ vim.keymap.set({ "n", "v" }, "<C-;>", ":", { noremap = true })
 vim.cmd [[nnoremap <expr> <C-+> ':resize +' . v:count1 . '<CR>']]
 vim.cmd [[nnoremap <expr> <C-_> ':resize -' . v:count1 . '<CR>']]
 
--- for https://github.com/chaoren/vim-wordmotion
-vim.g.camelcasemotion_key = '<localleader>'
-
 
 function MoveVisualCursor()
     local start_line = vim.fn.line("'<")
