@@ -322,7 +322,6 @@ return {
         -- | notebookCell           | cell delimited by double percent comment, such as # %%                                     | outer includes the bottom cell border                                         | -                                    | iN/aN            | all                             |
         "chrisgrieser/nvim-various-textobjs",
         event = "VeryLazy",
-        opts = { useDefaultKeymaps = true },
         config = function ()
             -- gx 不需要光标位于链接即可打开，当当前不在链接所在行搜索全部链接
             local function openURL(url)
@@ -363,6 +362,12 @@ return {
                     end)
                 end
             end, { desc = "URL Opener" })
+
+            -- 有config情况下 opts无效
+            require("various-textobjs").setup({
+                useDefaultKeymaps = true,
+                disabledKeymaps = {'n','in','an'},
+            })
 
         end
     },

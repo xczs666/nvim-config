@@ -16,8 +16,8 @@ return {
     -- 'jiangmiao/auto-pairs',
     -- <C-n> Ctrl-Down/Up Shift-Arrows n/N [/] q Q
     { 'mg979/vim-visual-multi',          branch = 'master',      event = "VeryLazy", },
-    -- i a I A   n l   aa ia
-    -- 'wellle/targets.vim',
+    -- i a I A   n l   aa ia in an? il al
+    'wellle/targets.vim',
     -- { 'Lokaltog/powerline',     rtp = '/powerline/bindings/vim' },
     -- 'bling/vim-bufferline',
     -- 'flazz/vim-colorschemes',
