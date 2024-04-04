@@ -18,6 +18,7 @@ return {
         config = true,
     },
     {
+        -- i<space>,a(, a), a',af, a?,af
         "echasnovski/mini.ai",
         event = "VeryLazy",
         config = true,
@@ -322,9 +323,49 @@ return {
         "chrisgrieser/nvim-various-textobjs",
         event = "VeryLazy",
         opts = { useDefaultKeymaps = true },
-    },
+        config = function ()
+            -- gx 不需要光标位于链接即可打开，当当前不在链接所在行搜索全部链接
+            local function openURL(url)
+                local opener
+                if vim.fn.has("macunix") == 1 then
+                    opener = "open"
+                elseif vim.fn.has("linux") == 1 then
+                    opener = "xdg-open"
+                elseif vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 then
+                    opener = "start"
+                end
+                local openCommand = string.format("%s '%s' >/dev/null 2>&1", opener, url)
+                vim.fn.system(openCommand)
+            end
 
-        "bkad/CamelCaseMotion",
+            vim.keymap.set("n", "gx", function()
+                require("various-textobjs").url()
+                local foundURL = vim.fn.mode():find("v")
+                if foundURL then
+                    -- retrieve URL with the z-register as intermediary
+                    vim.cmd.normal { '"zy', bang = true }
+                    local url = vim.fn.getreg("z")
+                    openURL(url)
+                else
+                    -- find all URLs in buffer
+                    local urlPattern = require("various-textobjs.charwise-textobjs").urlPattern
+                    local bufText = table.concat(vim.api.nvim_buf_get_lines(0, 0, -1, false), "\n")
+                    local urls = {}
+                    for url in bufText:gmatch(urlPattern) do
+                        table.insert(urls, url)
+                    end
+                    if #urls == 0 then return end
+
+                    -- select one, use a plugin like dressing.nvim for nicer UI for
+                    -- `vim.ui.select`
+                    vim.ui.select(urls, { prompt = "Select URL:" }, function(choice)
+                        if choice then openURL(choice) end
+                    end)
+                end
+            end, { desc = "URL Opener" })
+
+        end
+    },
 
     {
         -- also see: https://github.com/chaoren/vim-wordmotion
