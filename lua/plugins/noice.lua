@@ -32,6 +32,11 @@ return {
     },
     config = function()
         require("noice").setup({
+            messages = {
+                -- NOTE: If you enable messages, then the cmdline is enabled automatically.
+                -- This is a current Neovim limitation.
+                enabled = false, -- enables the Noice messages UI
+            },
             views = {
                 notify = {
                     -- 信息提示不会重复出现而是覆盖

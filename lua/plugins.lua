@@ -47,6 +47,7 @@ return {
     -- 'airblade/vim-gitgutter',
     { 'osyo-manga/vim-over',             event = "VeryLazy" },
     { 'godlygeek/tabular',               cmd = "Tabularize",             dependencies = { 'quentindecock/vim-cucumber-align-pipes' } },
+    { 'junegunn/vim-easy-align',         cmd = "EasyAlign" },
     -- <leader>tm,<leader>tr,<leader>tt,<leader>tfa,<leader>tfe,i|,a|,[|,]|,{|,}|,<leader>T,<leader>tdd,<leader>tdc,<leader>tic,Sum(1:-1),Average(1,2:5,2)/$5,1
     { 'dhruvasagar/vim-table-mode' },
     -- { 'luochen1990/rainbow',                  event = "VeryLazy", },
