@@ -299,7 +299,7 @@ return {
         -- | entireBuffer           | entire buffer as one text object                                                           | -                                                                             | -                                    | gG               | all                             |
         -- | nearEoL                | from cursor position to end of line, minus one character                                   | -                                                                             | -                                    | n                | all                             |
         -- | lineCharacterwise      | current line, but characterwise                                                            | outer includes indentation and trailing spaces                                | -                                    | i_/a_            | all                             |
-        -- | column                 | column down until indent or shorter line. Accepts {count} for multiple columns.            | -                                                                             | -                                    |                  |                                 | all                 |
+        -- | column                 | column down until indent or shorter line. Accepts {count} for multiple columns.            | -                                                                             | -                                    | |                | all                             |
         -- | value                  | value of key-value pair, or right side of a assignment, excl. trailing comment (in a line) | outer includes trailing commas or semicolons                                  | small                                | iv/av            | all                             |
         -- | key                    | key of key-value pair, or left side of a assignment                                        | outer includes the = or :                                                     | small                                | ik/ak            | all                             |
         -- | url                    | works with http[s] or any other protocol                                                   | -                                                                             | big                                  | L                | all                             |
@@ -366,7 +366,7 @@ return {
             -- 有config情况下 opts无效
             require("various-textobjs").setup({
                 useDefaultKeymaps = true,
-                disabledKeymaps = {'n','in','an'},
+                disabledKeymaps = {'n','in','an', '|'},
             })
 
         end
