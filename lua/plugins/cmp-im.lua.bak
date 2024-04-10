@@ -1,0 +1,24 @@
+return {
+    {
+        -- 一个用cmp提示写中文的办法，但是因为没法快速选择以及选字不智能，目前先关闭
+        "yehuohan/cmp-im-zh",
+        dependencies = {
+            "yehuohan/cmp-im",
+            config = function()
+                local cmp_im = require('cmp_im')
+                local cmp = require('cmp')
+                cmp.setup({
+                    mapping = { ['<Space>'] = cmp.mapping(cmp_im.select(), { 'i' }) },
+                })
+                vim.keymap.set({'n', 'v', 'c', 'i'}, '<M-;>',
+                    function() vim.notify(string.format('IM is %s', cmp_im.toggle() and 'enabled' or 'disabled')) end)
+                cmp.setup{ sources = { { name = 'IM' } }, }
+            end,
+        },
+        config= function ()
+            require('cmp_im').setup{
+                tables = require('cmp_im_zh').tables{ 'pinyin' }
+            }
+        end
+    }
+}
