@@ -32,6 +32,12 @@ return {
     },
     config = function()
         require("noice").setup({
+            cmdline = {
+                format = {
+                    search_down = { kind = "search", pattern = "^/", icon = "🔎 ", lang = "regex" },
+                    search_up = { kind = "search", pattern = "^%?", icon = "🔍 ", lang = "regex" },
+                },
+            },
             messages = {
                 -- NOTE: If you enable messages, then the cmdline is enabled automatically.
                 -- This is a current Neovim limitation.
@@ -53,7 +59,7 @@ return {
             },
             -- you can enable a preset for easier configuration
             presets = {
-                bottom_search = true,       -- use a classic bottom cmdline for search
+                bottom_search = false,       -- use a classic bottom cmdline for search
                 command_palette = true,     -- position the cmdline and popupmenu together
                 long_message_to_split = true, -- long messages will be sent to a split
                 inc_rename = false,         -- enables an input dialog for inc-rename.nvim
