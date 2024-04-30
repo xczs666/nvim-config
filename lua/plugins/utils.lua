@@ -363,10 +363,12 @@ return {
                 end
             end, { desc = "URL Opener" })
 
+            vim.keymap.set( { "o", "x" }, "gcm", "<cmd>lua require('various-textobjs').multiCommentedLines()<CR>", { desc = "multi code line" })
+
             -- 有config情况下 opts无效
             require("various-textobjs").setup({
                 useDefaultKeymaps = true,
-                disabledKeymaps = {'n','in','an', '|'},
+                disabledKeymaps = {'n','in','an', '|', 'gc'},
             })
 
         end
