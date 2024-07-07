@@ -21,7 +21,10 @@ vim.bo.fileencoding = "utf-8"
 -- 检查是否存在 g:neovide 变量
 if vim.g.neovide then
     -- 在 macOS 上将 Alt 键映射为 Meta 键
-    vim.g.neovide_input_macos_alt_is_meta = true
+    -- vim.g.neovide_input_macos_alt_is_meta = true
+    -- Possible values are `both`, `only_left`, `only_right`, `none`. Set to `none` by default.
+    -- see https://neovide.dev/configuration.html
+    vim.g.neovide_input_macos_option_key_is_meta = 'both'
     -- 设置光标拖尾效果
     vim.g.neovide_cursor_vfx_mode = "railgun"
     -- 如果需要设置光标拖尾大小，可以取消下一行的注释并设置合适的值
