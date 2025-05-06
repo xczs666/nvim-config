@@ -5,11 +5,11 @@ return {
     -- https://github.com/karb94/neoscroll.nvim
 
     {
-        -- j/k 按住不动加速
+        -- 按住不动加速,因为j/k会让宏错乱所以改为用<C-e>,<C-y> 20250506
         "rhysd/accelerated-jk",
         keys = {
-            { "j", "<Plug>(accelerated_jk_gj)", mode = { "n" } },
-            { "k", "<Plug>(accelerated_jk_gk)", mode = { "n" } },
+            { "<C-e>", "<Plug>(accelerated_jk_gj)", mode = { "n" } },
+            { "<C-y>", "<Plug>(accelerated_jk_gk)", mode = { "n" } },
         },
     },
     {
