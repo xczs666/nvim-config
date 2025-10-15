@@ -15,7 +15,9 @@ return {
     { 'unblevable/quick-scope',          event = "VeryLazy", },
     -- 'jiangmiao/auto-pairs',
     -- <C-n> Ctrl-Down/Up Shift-Arrows n/N [/] q Q
-    { 'mg979/vim-visual-multi',          branch = 'master',      event = "VeryLazy", },
+    -- { 'mg979/vim-visual-multi',          branch = 'master',      event = "VeryLazy", },
+    -- <C-n>,<C-x>,<C-p>,<A-n>
+    { 'terryma/vim-multiple-cursors',          branch = 'master',      event = "VeryLazy", },
     -- i a I A   n l   aa ia in an? il al
     'wellle/targets.vim',
     -- { 'Lokaltog/powerline',     rtp = '/powerline/bindings/vim' },
