@@ -338,16 +338,15 @@ return {
             end
 
             vim.keymap.set("n", "gx", function()
-                require("various-textobjs").url()
-                local foundURL = vim.fn.mode():find("v")
+                require("various-textobjs").url() -- select URL
+                local foundURL = vim.fn.mode() == "v" -- only switches to visual mode when textobj found
                 if foundURL then
-                    -- retrieve URL with the z-register as intermediary
-                    vim.cmd.normal { '"zy', bang = true }
-                    local url = vim.fn.getreg("z")
-                    openURL(url)
+                    local url = vim.fn.getregion(vim.fn.getpos("."), vim.fn.getpos("v"), { type = "v" })[1]
+                    vim.ui.open(url) -- requires nvim 0.10
+                    vim.cmd.normal { "v", bang = true } -- leave visual mode
                 else
                     -- find all URLs in buffer
-                    local urlPattern = require("various-textobjs.charwise-textobjs").urlPattern
+                    local urlPattern = "%l%l%l-://[^%s)]+"
                     local bufText = table.concat(vim.api.nvim_buf_get_lines(0, 0, -1, false), "\n")
                     local urls = {}
                     for url in bufText:gmatch(urlPattern) do

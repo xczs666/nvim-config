@@ -60,5 +60,6 @@ return {
     -- statusline
     -- 'vim-airline/vim-airline-themes',
     -- 快捷键gs,<c-a>,<c-x> https://github.com/AndrewRadev/switch.vim?tab=readme-ov-file
+    -- let g:switch_custom_definitions = ...
     { 'AndrewRadev/switch.vim',          dependencies = { 'tpope/vim-speeddating' }, config = function () vim.cmd[[ call SwitchConfig()]] end },
 }
