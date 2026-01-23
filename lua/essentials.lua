@@ -94,11 +94,6 @@ vim.keymap.set('v', '<leader>|', [[:lua MoveVisualCursor()<CR>]], { noremap = tr
 vim.keymap.set('n', '<D-CR>', "o<ESC>", { noremap = true, silent = true })
 
 
-vim.keymap.set({ "n", "v" }, "<leader>a|", "<cmd>Tabularize /|<CR>")
-vim.keymap.set({ "n", "v" }, "<leader>a=", "<cmd>Tabularize /^[^=]*\\zs=<CR>")
-vim.keymap.set({ "n", "v" }, "<leader>a:", "<cmd>Tabularize /:<CR>")
-vim.keymap.set({ "n", "v" }, "<leader>a,", "<cmd>Tabularize /,\\zs/l0r1<CR>")
-
 -- tmux不支持<C-;>
 vim.keymap.set({ "n", "v" }, "<C-;>", ":", { noremap = true })
 -- command 命令影响记录以分割窗显示

@@ -22,6 +22,12 @@ return {
         "echasnovski/mini.ai",
         event = "VeryLazy",
         config = true,
+        opts = {
+            mappings = {
+                goto_left = '',   -- 禁用 g[
+                goto_right = '',  -- 禁用 g]
+            },
+        },
     },
     {
         -- gcc/gc 注释

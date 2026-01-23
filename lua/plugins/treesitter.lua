@@ -75,9 +75,10 @@ return {
             },
             swap = {
                 enable = true,
-                swap_next = {
-                    ["<leader>a"] = "@parameter.inner",
-                },
+                -- 让出给 nmap <Leader>a :call TabularizeWithChar()<CR>
+                -- swap_next = {
+                --     ["<leader>a"] = "@parameter.inner",
+                -- },
                 swap_previous = {
                     ["<leader>A"] = "@parameter.inner",
                 },
