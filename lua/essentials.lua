@@ -1,5 +1,5 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = '\\'
+-- vim.g.mapleader = " "
+-- vim.g.maplocalleader = '\\'
 -- Netrw gx映射
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 0
