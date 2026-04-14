@@ -269,23 +269,21 @@ return {
         -- v,：选中上一次选中的范围
         -- v;：选中容器外围
         -- vi;：选中容器内
-        "RRethy/nvim-treesitter-textsubjects",
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
-        event = "VeryLazy",
-        config = function()
-            require("nvim-treesitter.configs").setup({
-                textsubjects = {
-                    enable = true,
-                    prev_selection = "M",
-                    keymaps = {
-                        ["m"] = "textsubjects-smart",
-                        -- 和f/t重复执行冲突
-                        -- [";"] = "textsubjects-container-outer",
-                        -- ["i;"] = "textsubjects-container-inner",
-                    },
-                },
-            })
-        end,
+        -- NOTE: nvim-treesitter-textsubjects 不兼容 Neovim 0.12 新版 nvim-treesitter，暂时禁用
+        -- "RRethy/nvim-treesitter-textsubjects",
+        -- dependencies = { "nvim-treesitter/nvim-treesitter" },
+        -- event = "VeryLazy",
+        -- config = function()
+        --     require("nvim-treesitter.configs").setup({
+        --         textsubjects = {
+        --             enable = true,
+        --             prev_selection = "M",
+        --             keymaps = {
+        --                 ["m"] = "textsubjects-smart",
+        --             },
+        --         },
+        --     })
+        -- end,
     },
 
     {

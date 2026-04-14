@@ -1,6 +1,7 @@
 return {
     'neovim/nvim-lspconfig',
     dependencies = { "folke/neoconf.nvim", 'folke/neodev.nvim', { "j-hui/fidget.nvim", tag = "legacy", } },
+    enabled = not vim.g.vscode,
     config = function()
         require("neoconf").setup()
         require("neodev").setup()
