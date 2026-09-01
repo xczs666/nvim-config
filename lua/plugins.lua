@@ -57,6 +57,24 @@ return {
     { 'kristijanhusak/vim-dadbod-ui',    cmd = { "DBUI", "DBUIToggle" }, dependencies = { 'tpope/vim-dadbod', 'kristijanhusak/vim-dadbod-completion', } },
     '907th/vim-auto-save',
     'ybian/smartim',
+    -- 数学表达式计算：普通/可视模式按 ;bc，在当前行或选区后追加结果
+    {
+        'Necrom4/calcium.nvim',
+        cmd = { 'Calcium' },
+        keys = {
+            {
+                ';bc',
+                ':Calcium<CR>',
+                mode = { 'n', 'v' },
+                desc = 'Calculate expression',
+                silent = true,
+            },
+        },
+        opts = {
+            notifications = true,
+            default_mode = 'append',
+        },
+    },
     -- statusline
     -- 'vim-airline/vim-airline-themes',
     -- 快捷键gs,<c-a>,<c-x> https://github.com/AndrewRadev/switch.vim?tab=readme-ov-file
