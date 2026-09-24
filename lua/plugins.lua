@@ -3,7 +3,18 @@ return {
     -- 插入模式下快捷键
     { 'tpope/vim-rsi',                   event = "VeryLazy", },
     -- gr 匹配替换
-    { 'vim-scripts/ReplaceWithRegister', event = "VeryLazy", },
+    {
+        'vim-scripts/ReplaceWithRegister',
+        event = "VeryLazy",
+        init = function()
+            for _, key in ipairs({ 'gra', 'gri', 'grn', 'grr', 'grt' }) do
+                local mapping = vim.fn.maparg(key, 'n', false, true)
+                if mapping.desc and mapping.desc:match('^vim%.lsp%.buf%.') then
+                    vim.keymap.del('n', key)
+                end
+            end
+        end,
+    },
     -- sa sd sr
     -- i,I
     { 'machakann/vim-sandwich',          event = "VeryLazy" },
